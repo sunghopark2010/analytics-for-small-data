@@ -25,17 +25,47 @@ All -n, -d, -t options are optional. When not given, \<name of projects\> will b
 	</tr>
 	<tr>
 		<td>Categorical</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>
+			<ul>
+				<li>Value frequencies</li>
+			</ul>
+		</td>
+		<td>
+			<ul>
+				<li>Value frequencies by dependent variable value</li>
+				<li>Value frequencies by independent variable value</li>
+				<li>ChiSq test</li>
+			</ul>
+		</td>
+		<td>
+			<ul>
+				<li>Histogram by independent variable value</li>
+				<li>Box plot by independent variable value</li>
+				<li>Regression</li>
+			</ul>
+		</td>
 	</tr>
 	<tr>
-		<td>Categorical</td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
+		<td>Numerical</td>
+		<td>
+			<ul>
+				<li>Box plot</li>
+				<li>Histogram</li>
+			</ul>
+		</td>
+		<td>
+			<ul>
+				<li>Box plot</li>
+				<li>Histogram</li>
+				<li>Stack plot</li>
+			</ul>
+		</td>
+		<td>
+			<ul>
+				<li>Scatter plot</li>
+				<li>Regression</li>
+			</ul>
+		</td>
 	</tr>
 </table>
 
