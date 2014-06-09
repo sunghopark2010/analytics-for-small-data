@@ -9,9 +9,10 @@ Automated descriptive analysis and predictive modeling for data sets that can fi
 
     run.sh <input file path> -n <name of project> -d <dependent variable> -t <time variable>
 
-All -n, -d, -t options are optional. When not given, <name of projects> will be project_<time> where <time> is in the YYYYmmddHHMMSS format. Not relevant analyses will not be run if dependent and time variables are not given.
+All -n, -d, -t options are optional. When not given, \<name of projects\> will be project_\<time\> where \<time\> is in the YYYYmmddHHMMSS format. Not relevant analyses will not be run if dependent and time variables are not given.
 
 ## Types of analyses to run
+
 <table>
 	<tr>
 		<th rowspan="2">Independent variable type</th>
@@ -36,6 +37,8 @@ All -n, -d, -t options are optional. When not given, <name of projects> will be 
 		<td></td>
 		<td></td>
 	</tr>
+</table>
+
 ## Output
 
 For each dependent variable, it will create the following structure.
