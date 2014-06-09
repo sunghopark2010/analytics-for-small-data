@@ -29,21 +29,24 @@ dep.var.type <- DetermineVariableType(source.data, dep.var.name, numeric.factor.
 
 # Start handling each variable
 sapply(colnames(source.data), function(ind.var.name) {
+  # Create a directory for this variable
+  dir.create(paste(project.name, "/", ind.var.name,sep=""))
   if (ind.var.name == dep.var.name) {
     
   } else {
     ind.var.type <- DetermineVariableType(source.data, ind.var.name, numeric.factor.variables)
     # Strategy pattern
     if (ind.var.type == 'factor' && dep.var.type == 'factor') {
-      HandleFactorFactor(source.data[[col.name]], source.data[[dep.var.name]], source.data[[time.var.name]], ind.var.name, dep.var.name, time.var.name, project.name)
+      HandleFactorFactor(source.data[[ind.var.name]], source.data[[dep.var.name]], source.data[[time.var.name]], ind.var.name, dep.var.name, time.var.name, project.name)
     } else if (ind.var.type == 'factor' && dep.var.type == 'numeric') {
-      HandleFactorNumeric(source.data[[col.name]], source.data[[dep.var.name]], source.data[[time.var.name]], ind.var.name, dep.var.name, time.var.name, project.name)
+      HandleFactorNumeric(source.data[[ind.var.name]], source.data[[dep.var.name]], source.data[[time.var.name]], ind.var.name, dep.var.name, time.var.name, project.name)
     } else if (ind.var.type == 'numeric' && dep.var.type == 'factor') {
-      HandleNumericFactor(source.data[[col.name]], source.data[[dep.var.name]], source.data[[time.var.name]], ind.var.name, dep.var.name, time.var.name, project.name)
+      HandleNumericFactor(source.data[[ind.var.name]], source.data[[dep.var.name]], source.data[[time.var.name]], ind.var.name, dep.var.name, time.var.name, project.name)
     } else if (ind.var.type == 'numeric' && dep.var.type == 'numeric') {
-      HandleNumericNumeric(source.data[[col.name]], source.data[[dep.var.name]], source.data[[time.var.name]], ind.var.name, dep.var.name, time.var.name, project.name)
+      HandleNumericNumeric(source.data[[ind.var.name]], source.data[[dep.var.name]], source.data[[time.var.name]], ind.var.name, dep.var.name, time.var.name, project.name)
     } else {
       write(paste("Warning: could not decide whether ", ind.var.name, " is a numeric or factor; skipping this variable."), stderr())
     }
   }
 })
+
